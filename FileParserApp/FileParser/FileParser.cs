@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FileParser
 {
@@ -34,7 +33,7 @@ namespace FileParser
                 return temp;
             }
 
-            for (int i = 1; i < fileLines.Length; i++)
+            for (int i = 0; i < fileLines.Length; i++)
             {
                 var fields = fileLines[i].Split(delimiter);
                 temp.Add(new Record()
