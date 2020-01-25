@@ -1,0 +1,4 @@
+LastName|FirstName|Gender|FavoriteColor|DateOfBirth
+Smith|John|M|Blue|01/01/1920
+Funny|Doug|M|Green|03/04/1988
+Mayo|Patricia|F|Red|11-15-1990
