@@ -11,8 +11,15 @@ namespace FileParser
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Gender { get; set; }
+        public char Gender { get; set; }
         public string FavoriteColor { get; set; }
         public DateTime DOB { get; set; }
+
+        public bool Equals(Record b)
+        {
+            if (LastName == b.LastName && FirstName == b.FirstName && Gender == b.Gender && FavoriteColor == b.FavoriteColor && DOB == b.DOB)
+                return true;
+            else return false;
+        }
     }
 }
