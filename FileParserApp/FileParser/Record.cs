@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FileParser
 {
@@ -16,6 +13,11 @@ namespace FileParser
         public string FavoriteColor { get; set; }
         public DateTime DOB { get; set; }
 
+        /// <summary>
+        /// Method to compare to Records
+        /// </summary>
+        /// <param name="b">Record to compare to</param>
+        /// <returns>True if equal, false otherwise</returns>
         public bool Equals(Record b)
         {
             if (LastName == b.LastName && FirstName == b.FirstName && Gender == b.Gender && FavoriteColor == b.FavoriteColor && DOB == b.DOB)

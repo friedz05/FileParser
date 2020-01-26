@@ -36,6 +36,10 @@ namespace FileParser
             for (int i = 0; i < fileLines.Length; i++)
             {
                 var fields = fileLines[i].Split(delimiter);
+                if (fields.Length != 5)
+                {
+                    continue;
+                }
                 temp.Add(new Record()
                 {
                     LastName = fields[0],

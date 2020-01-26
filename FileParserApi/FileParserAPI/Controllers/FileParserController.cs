@@ -9,16 +9,11 @@ namespace FileParserAPI.Controllers
     /// Controller for Web API for File Parser
     /// Assumptions:
     /// Get will return an empty if there are no objects
-    /// 
     /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class FileParserController : ControllerBase
     {        
-        public FileParserController()
-        {
-        }
-
         /// <summary>
         /// Simple method that returns name of api
         /// </summary>
@@ -63,12 +58,19 @@ namespace FileParserAPI.Controllers
         /// </summary>
         /// <returns>String "Content Posted" if parsed successfully, "Content Not Parsed" otherwise</returns>
         [HttpPost("/records")]
-        public async Task<string> Post()
+        public async Task<ActionResult> Post()
         {
+            if (Request == null)
+            {
+                return BadRequest();
+            }
             var content = new string[] { await new StreamReader(Request.Body).ReadToEndAsync() };
             var initCount = RecordContainer.ApiRecords.Count;
             RecordContainer.ApiRecords.AddRange(FileParser.FileParser.ParseLines(content));
-            return initCount < RecordContainer.ApiRecords.Count ? "Content Posted" : "Content Not Parsed";
+            if (initCount < RecordContainer.ApiRecords.Count)
+                return Ok(RecordContainer.ApiRecords);
+            else
+                return BadRequest();
         }
     }
 }

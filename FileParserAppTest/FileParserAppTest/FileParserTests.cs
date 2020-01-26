@@ -41,6 +41,20 @@ namespace FileParserTest
             Assert.IsTrue(result.Count == 0);
         }
         [TestMethod]
+        public void NotEnoughFieldsTest()
+        {
+            string[] pipeFile = { "Fry|Philip|M|Blue" };
+            var result = FileParser.FileParser.ParseLines(pipeFile);
+            Assert.IsTrue(result.Count == 0);
+        }
+        [TestMethod]
+        public void TooManyFieldsTest()
+        {
+            string[] pipeFile = { "Data|Fry|Philip|M|Blue|02/09/1980" };
+            var result = FileParser.FileParser.ParseLines(pipeFile);
+            Assert.IsTrue(result.Count == 0);
+        }
+        [TestMethod]
         public void BadDateandBadGender()
         {
             Record badFormatRecord = new Record() { LastName = "Fry", FirstName = "Philip", Gender = 'U', FavoriteColor = "Blue", DOB = DateTime.MinValue };
