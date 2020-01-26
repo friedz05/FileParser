@@ -2,19 +2,21 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace FileParserAPI.Controllers
 {
+    /// <summary>
+    /// Controller for Web API for File Parser
+    /// Assumptions:
+    /// Get will return an empty if there are no objects
+    /// 
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class FileParserController : ControllerBase
-    {
-        private readonly ILogger<FileParserController> _logger;
-        
-        public FileParserController(ILogger<FileParserController> logger)
+    {        
+        public FileParserController()
         {
-            _logger = logger;
         }
 
         /// <summary>
@@ -30,7 +32,7 @@ namespace FileParserAPI.Controllers
         /// <summary>
         /// Get method returns the record data sorted by gender
         /// </summary>
-        /// <returns>Json response with data sorted</returns>
+        /// <returns>Ok Json response with data sorted</returns>
         [HttpGet("/records/gender")]
         public ActionResult GetByGender()
         {
@@ -39,7 +41,7 @@ namespace FileParserAPI.Controllers
         /// <summary>
         /// Get method returns the record data sorted by Date of Birth
         /// </summary>
-        /// <returns>Json response with data sorted</returns>
+        /// <returns>Ok Json response with data sorted</returns>
         [HttpGet("/records/birthdate")]
         public ActionResult GetByBirthDate()
         {
@@ -48,7 +50,7 @@ namespace FileParserAPI.Controllers
         /// <summary>
         /// Get method returns the record data sorted by Last Name
         /// </summary>
-        /// <returns>Json response with data sorted</returns>
+        /// <returns>Ok Json response with data sorted</returns>
         [HttpGet("/records/name")]
         public ActionResult GetByName()
         {
