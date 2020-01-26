@@ -2,7 +2,7 @@ using FileParser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace FileParserAppTest
+namespace FileParserTest
 {
     [TestClass]
     public class FileParserTests
