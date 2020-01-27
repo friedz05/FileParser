@@ -1,0 +1,1 @@
+C:\Users\Echo\.nuget\packages\reportgenerator\4.4.5\tools\netcoreapp3.0\ReportGenerator.exe "-reports:C:\Users\Echo\OneDrive\Documents\repo\fileparser\GeneratedReports\OpenCover.xml" "-targetdir:C:\Users\Echo\OneDrive\Documents\repo\fileparser\GeneratedReports\coveragereport" -reporttypes:Html
